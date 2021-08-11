@@ -21,7 +21,7 @@ function telbot()
     file:close()
     if (tbl.result[#tbl.result].message.forward_from_chat ~= nil) then
     	if (tbl.result[#tbl.result].message.forward_from_chat.username == tusername) then
-	    	if not (rec == tbl.result[#tbl.result].update_id) then
+	    	if not (rec == tbl.result[#tbl.result].message.message_id) then
 	    		--do shit
 	    		file = io.open('./telegram.txt', 'w')
 	    		file:write(tbl.result[#tbl.result].message.message_id)
